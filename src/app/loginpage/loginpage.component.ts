@@ -11,6 +11,7 @@ export class LoginpageComponent implements OnInit {
 	
 	username:string = '';
 	password:string = '';
+	errormessage:string = '';
 
   constructor(private r:Router, private form:FormsModule) { }
 
@@ -25,6 +26,8 @@ export class LoginpageComponent implements OnInit {
 		sessionStorage.setItem("birthdate", "01 Jan 1970");
 		sessionStorage.setItem("age", "19");
 		window.location.href = "/userpage";
+	}else{
+		this.errormessage = "Invalid username/password";
 	}
   }
 }
